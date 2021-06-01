@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./stye.css">
+</head>
+<body>
+    <div class="main-div">
+        <div id="timer-div" class="hidden">Timer goes here</div>
+        <h1 id="title">Coding Quiz Challenge</h1>
+        <h3 id='instructions'>You have 60 seconds to test your coding knowledge and achieve the high score. Good Luck!</h3>
+        <div id="question-section" class="hidden">
+            <div id="question-display">Question</div>
+            <div id="answer-buttons" class="button-display">
+                <button class="button">Answer 1</button>
+                <button class="button">Answer 2</button>
+                <button class="button">Answer 3</button>
+                <button class="button">Answer 4</button>
+            </div>
+        </div>
+        <div class="control">
+            <button id="start-button" class="start-button button">Start Quiz!</button>
+            <button id="next-button" class="next-button button hidden">Next Question</button>
+        </div>
+    </div>
 
+    <script src="./script.js"></script>
+</body>
+</html>
