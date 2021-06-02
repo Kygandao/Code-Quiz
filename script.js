@@ -7,11 +7,14 @@ nextQuestionButton.addEventListener('click', () => {
     nextQuestion()
 })
 
+const highscoreButton = document.getElementById('highscore-button');
+//highscoreButton.addEventListener('click', )
+
 const instructions = document.getElementById('instructions');
 
 const quizTitle = document.getElementById('title');
 
-const timer = document.getElementById('timer-div');
+const timerEl = document.getElementById('timer');
 
 const questionSection = document.getElementById('question-section');
 
@@ -66,20 +69,40 @@ const questionsArray = [
 
 function startQuiz() {
     startButton.classList.add('hidden');
-    timer.classList.remove('hidden');
+    timerEl.classList.remove('hidden');
     questionSection.classList.remove('hidden');
     nextQuestionButton.classList.remove('hidden')
     instructions.classList.add('hidden');
     quizTitle.classList.add('hidden');
+    highscoreButton.classList.add('hidden');
     randomQuestion = questionsArray.sort(() => Math.random() - .5);
     currentQuestion = 0;
     nextQuestion()
     countdown()
 }
 
-function countdown () {
-    
+function countdown() {
+    var timeLeft = 10;
+    var counter = setInterval(timer, 1000);
+    function timer() {
+        timeLeft = timeLeft - 1;
+        if (timeLeft < 0) {
+            clearInterval(counter);
+            startButton.classList.remove('hidden');
+            questionSection.classList.add('hidden');
+            nextQuestionButton.classList.add('hidden');
+            timerEl.classList.add('hidden');
+            quizTitle.classList.remove('hidden');
+                quizTitle.textContent = 'Times Up!';
+            instructions.classList.remove('hidden');
+                instructions.textContent = 'Your Score Is: '
+            highscoreButton.classList.remove('hidden');
+            return;
+        }
+        document.getElementById("timer").innerHTML = timeLeft;
+    }
 }
+
 
 function nextQuestion() {
     resetAnswerButtons()
@@ -113,7 +136,7 @@ function selectedAnswer(e) {
     if (randomQuestion.length > currentQuestion + 1) {
         nextQuestionButton.classList.remove('hidden')
     } else {
-        startButton.innerText = 'Restart Quiz'
         startButton.classList.remove('hidden')
+        startButton.innerText = 'Restart Quiz'
     }
 }

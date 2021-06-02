@@ -25,7 +25,13 @@ body {
 
 #timer-div {
     text-align: right;
-    padding: 10px
+    
+}
+
+#timer {
+    font-size: 30px;
+    color: white;
+    padding-right: 10px;
 }
 
 .main-div {
@@ -47,11 +53,16 @@ body {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 2px 1px;
+    padding: 2px;
 }
 
 .button:hover {
     background-color:lightslategray;
     color: white;
+}
+
+.button:focus {
+    background-color: lightslategrey;
 }
 
 
