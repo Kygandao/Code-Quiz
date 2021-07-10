@@ -8,7 +8,6 @@ nextQuestionButton.addEventListener('click', () => {
 })
 
 const highscoreButton = document.getElementById('highscore-button');
-//highscoreButton.addEventListener('click', )
 
 const instructions = document.getElementById('instructions');
 
